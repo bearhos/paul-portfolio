@@ -31,9 +31,13 @@ The supplied CV and the user's employment correction are the content sources. CM
 
 Project details describe contribution, not sole ownership. ACB ONE, SCEX, and Danz use the user's supplied app previews unchanged. Public App Store screenshots for Sync and OKI can reflect later product versions; project dialogs state this. Contact uses the personal email and LinkedIn link from the CV. No GitHub profile is invented, and the outdated CV is not published as a download.
 
-## Before deployment
+## Deployment
 
-Set `NEXT_PUBLIC_SITE_URL` to the final HTTPS origin, using `.env.example` as a reference. Canonical metadata and the sitemap use that origin; no public domain is guessed. The site needs no database, authentication, email provider, or secret keys. It has not been deployed by this task.
+The `master` branch deploys automatically to GitHub Pages through `.github/workflows/deploy-pages.yml`.
+
+Public site: https://bearhos.github.io/paul-portfolio/
+
+The workflow builds a static export with the repository base path, runs lint and typecheck, and publishes the `out` directory. The site needs no database, authentication, email provider, or secret keys.
 
 Confirm the SCEX start date and CMC end year when updating the timeline. Choose any additional portrait or project screenshots directly in the image assets; no portrait has been fabricated.
 

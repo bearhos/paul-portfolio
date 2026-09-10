@@ -1,3 +1,9 @@
+const basePath = (
+  process.env.NEXT_PUBLIC_BASE_PATH ?? process.env.PAGES_BASE_PATH ?? ""
+).replace(/\/$/, "");
+
+const publicPath = (path: string) => `${basePath}${path}`;
+
 export const profile = {
   name: "Phạm Hải Phước",
   shortName: "Phước",
@@ -5,7 +11,7 @@ export const profile = {
   company: "SCEX",
   email: "phamhaiphuoc15@gmail.com",
   linkedin: "https://www.linkedin.com/in/phuoc-pham-804624254/",
-  cv: "/cv/pham-hai-phuoc-cv.pdf",
+  cv: publicPath("/cv/pham-hai-phuoc-cv.pdf"),
   location: "Ho Chi Minh City, Vietnam",
 };
 
@@ -37,7 +43,7 @@ export const projects: Project[] = [
     role: "Senior React Native Engineer",
     technologies: ["React Native"],
     contributions: [],
-    screenshot: "/images/scex-store-preview.webp",
+    screenshot: publicPath("/images/scex-store-preview.webp"),
     url: "https://apps.apple.com/vn/app/scex-trading-simulator/id6763202537",
     cardLinkLabel: "Simulator on App Store",
     note: "The public App Store link opens SCEX Trading Simulator, an educational version using simulated assets, not real-money trading. The preview is from that listing; the overview above describes the broader SCEX platform.",
@@ -55,7 +61,7 @@ export const projects: Project[] = [
       "Integrated payment gateways and social sign-in.",
       "Led a four-member team and collaborated with Product on the backlog.",
     ],
-    screenshot: "/images/doxa-website-preview.webp",
+    screenshot: publicPath("/images/doxa-website-preview.webp"),
     url: "https://doxa.cafe",
     linkLabel: "Visit website",
     note: "Preview captured from Doxa's public sign-in page. The live website may reflect changes made after my involvement.",
@@ -73,8 +79,8 @@ export const projects: Project[] = [
       "Set up CI/CD with Fastlane and worked with Product on features and backlogs.",
       "Led a four-person team and mentored three fellow developers.",
     ],
-    icon: "/images/sync-icon.webp",
-    screenshot: "/images/sync-preview.webp",
+    icon: publicPath("/images/sync-icon.webp"),
+    screenshot: publicPath("/images/sync-preview.webp"),
     url: "https://apps.apple.com/vn/app/sync-secure-chat-private-ai/id6747809379",
     note: "Public App Store imagery may reflect updates released after my involvement.",
   },
@@ -96,7 +102,7 @@ export const projects: Project[] = [
       "Extended shared components for compatibility and reuse across modules.",
       "Integrated partner SDKs and collaborated with ACB's internal development team.",
     ],
-    screenshot: "/images/acb-one-store-preview.webp",
+    screenshot: publicPath("/images/acb-one-store-preview.webp"),
     url: "https://apps.apple.com/vn/app/acb-one/id950141024",
     cardLinkLabel: "View on App Store",
     note: "This overview describes my contribution through CMC Global. The public App Store preview may reflect updates released after my involvement. Internal interfaces, source code, and implementation details are not included.",
@@ -114,8 +120,8 @@ export const projects: Project[] = [
       "Connected backend APIs and integrated Firebase, APNs, sockets, and LiveKit.",
       "Worked on a communication product described in my CV as supporting end-to-end encryption.",
     ],
-    icon: "/images/oki-icon.webp",
-    screenshot: "/images/oki-preview.webp",
+    icon: publicPath("/images/oki-icon.webp"),
+    screenshot: publicPath("/images/oki-preview.webp"),
     url: "https://apps.apple.com/us/app/oki-chat-platform/id6758304434",
     note: "Public App Store imagery may reflect updates released after my involvement.",
   },
@@ -133,7 +139,7 @@ export const projects: Project[] = [
       "Created responsive UI with Styled Components and improved render cycles.",
       "Contributed to testing, bug fixes, and code reviews.",
     ],
-    screenshot: "/images/danz-preview.png",
+    screenshot: publicPath("/images/danz-preview.png"),
   },
 ];
 
